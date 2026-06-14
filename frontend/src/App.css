@@ -1,0 +1,501 @@
+/* ------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------- GLOBALS -----------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------ */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #121212;
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-y: scroll;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  color: #ec1d24;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------- HEADER -----------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------ */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 10;
+  background-color: #1e1e1e;
+  border-bottom: 1px solid #ec1d24;
+  box-shadow: 0 0 15px #ec1d2433;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+header .logo {
+  font-size: 32px;
+  font-weight: bold;
+  background-color: #ec1d24;
+  color: white;
+  padding: 2px 8px;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+header nav a {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #a0a0a0;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+header nav a:hover,
+header nav a.active {
+  color: #ffffff;
+  border-bottom: 2px solid #ec1d24;
+}
+
+header button,
+header .auth-button {
+  padding: 10px 15px;
+  border: 1px solid #ec1d24;
+  color: #ec1d24;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+  background: none;
+}
+
+header button:hover,
+header .auth-button:hover,
+header .auth-button.active {
+  background-color: #ec1d24;
+  color: white;
+  border-bottom: 1px solid #ec1d24; /* Prevents the 2px nav underline from overriding the button box */
+  box-shadow: 0 0 15px #ec1d2466;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------- MAIN & CATEGORY -----------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------ */
+
+main {
+  padding-top: 100px; /* Space for fixed header */
+  padding-bottom: 40px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.category {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 576px) {
+  .category {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .category {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .category {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  .category {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.category article {
+  background-color: #1e1e1e;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: 1px solid #333333;
+  position: relative;
+}
+
+.category article:hover {
+  box-shadow: 0 8px 24px #00000099;
+  border-color: #ec1d2480;
+}
+
+.category article img {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.category article a {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.category article section {
+  padding: 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.category article p {
+  font-size: 16px;
+  color: #a0a0a0;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.category article button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #00000080;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  line-height: 1;
+  border: none;
+  cursor: pointer;
+}
+
+.category article button:hover {
+  background-color: #000000cc;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------- DETAILS PAGE -----------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------ */
+
+.hero {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 48px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hero img {
+  width: 350px;
+  border-radius: 5px;
+  box-shadow: 0 4px 16px #00000080;
+}
+
+.hero section {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero section h1 {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  font-size: 19px;
+  color: #a0a0a0;
+  line-height: 28.8px;
+}
+
+.back-btn {
+  margin-bottom: 32px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #333333;
+  background: #1e1e1e;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background: #333333;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------- FORMS & SEARCH -----------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------ */
+
+.search-bar {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #333333;
+  background-color: #121212;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #ec1d24;
+}
+
+.search-bar button {
+  padding: 15px 30px;
+  background-color: #ec1d24;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.search-bar button:hover {
+  background-color: #e60000;
+}
+
+.search-bar button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.search-bar button:disabled:hover {
+  background-color: #ec1d24; /* Revert to original background when hovering a disabled button */
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #1e1e1e;
+  border-radius: 5px;
+  box-shadow: 0 8px 24px #00000099;
+  border: 1px solid #333333;
+}
+
+.auth-form input {
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #333333;
+  background-color: #121212;
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.auth-form input:focus {
+  outline: none;
+  border-color: #ec1d24;
+}
+
+.auth-form button {
+  padding: 15px;
+  background-color: #ec1d24;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+
+.auth-form button:hover {
+  background-color: #e60000;
+}
+
+.auth-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.auth-form button:disabled:hover {
+  background-color: #ec1d24; /* Revert to original background */
+}
+
+.auth-toggle {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 16px;
+  color: #a0a0a0;
+}
+
+.auth-toggle button {
+  color: #ec1d24;
+  font-weight: bold;
+  text-decoration: underline;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------- PAGINATION -----------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------ */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.pagination button {
+  padding: 10px 15px;
+  border: 1px solid #ec1d24;
+  color: #ec1d24;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.pagination button:hover {
+  background-color: #ec1d24;
+  color: white;
+  box-shadow: 0 0 15px #ec1d2466;
+}
+
+.pagination button:disabled {
+  border-color: #333333;
+  color: #333333;
+  cursor: not-allowed;
+}
+
+.pagination button:disabled:hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.pagination span {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 30px;
+  color: #a0a0a0;
+  font-size: 19px;
+  background: #ffffff0d;
+  border-radius: 5px;
+  margin-top: 32px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------- NOT FOUND PAGE -----------------------------------------------
+------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------ */
+
+.not-found {
+  text-align: center;
+  padding-top: 10vh;
+}
+
+.not-found-title {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.not-found-message {
+  font-size: 1.5rem;
+  color: #a0a0a0;
+  margin-bottom: 2rem;
+}
+
+.not-found-link {
+  padding: 0.8rem 1.5rem;
+  background-color: #ec1d24;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.not-found-link:hover {
+  background-color: #e60000;
+  box-shadow: 0 0 15px #ec1d2466;
+}
